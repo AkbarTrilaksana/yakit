@@ -49,38 +49,36 @@ const createWindow = () => {
     win.on("close", (e) => {
         e.preventDefault()
 
-        if (flag) {
-            dialog
-                .showMessageBox(win, {
-                    icon: nativeImage.createFromPath(path.join(__dirname, "../assets/yakitlogo.pic.jpg")),
-                    type: "none",
-                    title: "提示",
-                    defaultId: 0,
-                    cancelId: 3,
-                    message: "确定要关闭吗？",
-                    buttons: ["最小化", "直接退出"],
-                    checkboxLabel: "不再展示关闭二次确认？",
-                    checkboxChecked: false,
-                    noLink: true
-                })
-                .then((res) => {
-                    setExtraKVPair("windows-close-flag", !res.checkboxChecked)
-                    if (res.response === 0) {
-                        e.preventDefault()
-                        win.minimize()
-                    } else if (res.response === 1) {
-                        win = null
-                        clearing()
-                        app.exit()
-                    } else {
-                        e.preventDefault()
-                        return
-                    }
-                })
-        } else {
-            win = null
-            clearing()
-            app.exit()
+        if(flag){
+            dialog.showMessageBox(win, {
+                icon: nativeImage.createFromPath(path.join(__dirname, "../assets/telecom_logo_small.png")),
+                type: 'none',
+                title: '提示',
+                defaultId: 0,
+                cancelId: 3,
+                message: '确定要关闭吗？',
+                buttons: ['最小化','直接退出'],
+                checkboxLabel: "不再展示关闭二次确认？",
+                checkboxChecked: false,
+                noLink: true
+            }).then((res) => {
+                setExtraKVPair('windows-close-flag', !res.checkboxChecked)
+                if(res.response === 0){
+                  e.preventDefault()
+                  win.minimize();
+                } else if(res.response === 1) {
+                  win = null;
+                  clearing();
+                  app.exit();
+                } else {
+                    e.preventDefault()
+                    return
+                }
+            })
+        }else{
+            win = null;
+            clearing();
+            app.exit();
         }
     })
 

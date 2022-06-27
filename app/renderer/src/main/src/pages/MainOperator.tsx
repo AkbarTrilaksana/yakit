@@ -32,7 +32,7 @@ import {
 } from "@ant-design/icons"
 import {failed, info, success} from "../utils/notification"
 import {showModal} from "../utils/showModal"
-import {YakLogoBanner} from "../utils/logo"
+import TelecomBanner from '../assets/img/telecom_logo.jpg'
 import {ConfigGlobalReverse, ReversePlatformStatus, YakitVersion, YakVersion} from "../utils/basic"
 import {CompletionTotal, getGlobalCompletions, setCompletions} from "../utils/monacoSpec/yakCompletionSchema"
 import {randomString} from "../utils/randomUtil"
@@ -870,12 +870,12 @@ const Main: React.FC<MainProp> = (props) => {
                     <Row>
                         <Col span={8}>
                             <Space>
-                                <div style={{marginLeft: 18, textAlign: "center", height: 60}}>
-                                    <Image src={YakLogoBanner} preview={false} width={130} style={{marginTop: 6}} />
+                                <div className="img-banner">
+                                    <Image src={TelecomBanner} preview={false} width={130} style={{marginTop: 6}}/>
                                 </div>
-                                <Divider type={"vertical"} />
-                                <YakVersion />
-                                <YakitVersion />
+                                <Divider type={"vertical"}/>
+                                {/* <YakVersion/>
+                                <YakitVersion/> */}
                                 {!hideMenu && (
                                     <Button
                                         style={{marginLeft: 4, color: "#207ee8"}}
