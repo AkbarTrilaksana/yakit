@@ -509,10 +509,10 @@ const ScanPortForm: React.FC<ScanPortFormProp> = (props) => {
             </Form.Item>
             <InputInteger
                 label={"并发"}
-                help={"最多同时扫描200个端口"}
+                // help={"最多同时扫描200个端口"}
                 value={params.Concurrent}
                 min={1}
-                max={200}
+                // max={200}
                 setValue={(e) => setParams({...params, Concurrent: e})}
             />
             <SwitchItem
