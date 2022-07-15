@@ -69,7 +69,28 @@ export enum Route {
     PayloadManager = "payload-manager",
 
     // Web安全
-    webSecurity='webSecurity',
+    webSecurity = "webSecurity",
+
+    // 主机安全
+    hostSecurity = "hostSecurity",
+
+    // 路由安全
+    routingSecurity = "routingSecurity",
+
+    // 物联网
+    wlwSecurity = "wlwSecurity",
+
+    // 云平台
+    cloudPlatformSecurity = "cloudPlatformSecurity",
+
+    // 密码安全
+    passwordSecurity = "passwordSecurity",
+
+    // 自动化漏洞检测模块
+    automatedModule = "automatedModule",
+
+    // 专家模式
+    expertMode = "expertMode",
 
     // 通用模块
     GeneralModule = "general-module",
@@ -138,7 +159,7 @@ export const RouteMenuData: MenuDataProps[] = [
         ]
     },
     {
-        key: Route.PoC,
+        key: Route.webSecurity,
         label: "Web安全", // 专项漏洞检测
         icon: <FunctionOutlined />,
         subMenuData: [
@@ -146,24 +167,73 @@ export const RouteMenuData: MenuDataProps[] = [
             {key: Route.PoC, label: "专项漏洞检测", icon: <EllipsisOutlined />, disabled: false}
         ]
     },
+    {
+        key: Route.hostSecurity,
+        label: "主机安全",
+        icon: <FunctionOutlined />
+    },
+
+    {
+        key: Route.routingSecurity,
+        label: "路由安全",
+        icon: <FunctionOutlined />
+    },
+
+    {
+        key: Route.wlwSecurity,
+        label: "物联网安全",
+        icon: <FunctionOutlined />
+    },
+
+    {
+        key: Route.cloudPlatformSecurity,
+        label: "云平台安全",
+        icon: <FunctionOutlined />
+    },
+
+    {
+        key: Route.passwordSecurity,
+        label: "密码安全",
+        icon: <FunctionOutlined />
+    },
+
+    {
+        key: Route.automatedModule,
+        label: "自动化漏洞检测模块",
+        icon: <FunctionOutlined />,
+        subMenuData: [
+            {key: Route.BatchExecutorPage, label: "插件批量执行", icon: <AppstoreOutlined />} // 插件批量执行
+        ]
+    },
+    {
+        key: Route.expertMode,
+        label: "专家模式",
+        icon: <FunctionOutlined />,
+        subMenuData: [
+            {key: Route.HTTPHacker, label: "MITM", icon: <FireOutlined />},
+            {key: Route.HTTPFuzzer, label: "Web Fuzzer", icon: <AimOutlined />},
+            {key: Route.YakScript, label: "Yak Runner", icon: <CodeOutlined />},
+            {key: Route.ModManager, label: "插件仓库", icon: <AppstoreOutlined />}
+        ]
+    },
+
     // {
     //     key: Route.PoC,
     //     label: "专项漏洞检测",
     //     icon: <FunctionOutlined />
     // },
 
-    {
-        key: Route.ModManagerDetail,
-        label: "插件管理",
-        icon: <AppstoreOutlined />,
-        subMenuData: [
-            {key: Route.ModManager, label: "插件仓库", icon: <AppstoreOutlined />},
-            {key: Route.BatchExecutorPage, label: "插件批量执行", icon: <AppstoreOutlined />}
-        ]
-    },
+    // {
+    //     key: Route.ModManagerDetail,
+    //     label: "插件管理",
+    //     icon: <AppstoreOutlined />,
+    //     subMenuData: [
+    //         {key: Route.ModManager, label: "插件仓库", icon: <AppstoreOutlined />},
+    //         {key: Route.BatchExecutorPage, label: "插件批量执行", icon: <AppstoreOutlined />}
+    //     ]
+    // },
 
-    {key: Route.PayloadManager, label: "Payload 管理", icon: <AuditOutlined />},
-    {key: Route.YakScript, label: "Yak Runner", icon: <CodeOutlined />},
+    // {key: Route.YakScript, label: "Yak Runner", icon: <CodeOutlined />},
     {
         key: Route.ReverseManager,
         label: "反连管理",
@@ -176,6 +246,7 @@ export const RouteMenuData: MenuDataProps[] = [
             {key: Route.TCPPortLog, label: "TCP-PortLog", icon: <OneToOneOutlined />}
         ]
     },
+    {key: Route.PayloadManager, label: "Payload 管理", icon: <AuditOutlined />},
     {
         key: Route.DataHandler,
         label: "数据处理",
