@@ -68,6 +68,9 @@ export enum Route {
     // Payload 管理
     PayloadManager = "payload-manager",
 
+    // Web安全
+    webSecurity='webSecurity',
+
     // 通用模块
     GeneralModule = "general-module",
     Mod_ScanPort = "scan-port",
@@ -113,22 +116,22 @@ export interface MenuDataProps {
 export const NoScrollRoutes: Route[] = [Route.HTTPHacker, Route.Mod_Brute, Route.YakScript]
 
 export const RouteMenuData: MenuDataProps[] = [
-    {
-        key: Route.PenTest,
-        label: "手工渗透测试",
-        icon: <AimOutlined />,
-        subMenuData: [
-            {key: Route.HTTPHacker, label: "MITM", icon: <FireOutlined />},
-            {key: Route.HTTPFuzzer, label: "Web Fuzzer", icon: <AimOutlined />}
-        ]
-    },
+    // {
+    //     key: Route.PenTest,
+    //     label: "手工渗透测试",
+    //     icon: <AimOutlined />,
+    //     subMenuData: [
+    //         {key: Route.HTTPHacker, label: "MITM", icon: <FireOutlined />},
+    //         {key: Route.HTTPFuzzer, label: "Web Fuzzer", icon: <AimOutlined />}
+    //     ]
+    // },
     {
         key: Route.GeneralModule,
-        label: "基础安全工具",
+        label: "信息收集",
         icon: <RocketOutlined />,
         subMenuData: [
-            {key: Route.Mod_ScanPort, label: "扫描端口/指纹", icon: <EllipsisOutlined />},
-            {key: Route.Mod_Brute, label: "爆破与未授权", icon: <EllipsisOutlined />, disabled: false}
+            {key: Route.Mod_ScanPort, label: "端口扫描", icon: <EllipsisOutlined />} // 扫描端口/指纹
+            // {key: Route.Mod_Brute, label: "爆破与未授权", icon: <EllipsisOutlined />, disabled: false}
             // {key: Route.Mod_Subdomain, label: "子域名发现", icon: <EllipsisOutlined/>, disabled: true},
             // {key: Route.Mod_Crawler, label: "基础爬虫", icon: <EllipsisOutlined/>, disabled: true},
             // {key: Route.Mod_SpaceEngine, label: "空间引擎", icon: <EllipsisOutlined/>, disabled: true},
@@ -136,9 +139,18 @@ export const RouteMenuData: MenuDataProps[] = [
     },
     {
         key: Route.PoC,
-        label: "专项漏洞检测",
-        icon: <FunctionOutlined />
+        label: "Web安全", // 专项漏洞检测
+        icon: <FunctionOutlined />,
+        subMenuData: [
+            {key: Route.Mod_Brute, label: "爆破与未授权", icon: <EllipsisOutlined />, disabled: false},
+            {key: Route.PoC, label: "专项漏洞检测", icon: <EllipsisOutlined />, disabled: false}
+        ]
     },
+    // {
+    //     key: Route.PoC,
+    //     label: "专项漏洞检测",
+    //     icon: <FunctionOutlined />
+    // },
 
     {
         key: Route.ModManagerDetail,
