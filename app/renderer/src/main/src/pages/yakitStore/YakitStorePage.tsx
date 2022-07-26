@@ -272,7 +272,7 @@ export const YakitStorePage: React.FC<YakitStorePageProp> = (props) => {
         setPlugin(undefined)
     })
     const onSetPlugin = useMemoizedFn((item) => {
-        if (plugSource==='user') {
+        if (plugSource === "user") {
             setUserPlugin(item)
         } else {
             setPlugin(item)
@@ -460,7 +460,9 @@ export const YakitStorePage: React.FC<YakitStorePageProp> = (props) => {
                             currentScript={script}
                             currentId={script?.Id}
                             onClicked={(info, index) => {
+                                if (info?.Id === script?.Id) return
                                 setScript(info)
+                                setIsUpdateItem(!isUpdateItem)
                             }}
                             setTotal={setTotalLocal}
                             queryLocal={queryLocal}
@@ -607,10 +609,14 @@ export const YakModuleList: React.FC<YakModuleListProp> = (props) => {
     const numberLocal = useRef<number>(0) // 本地 选择的插件index
     useEffect(() => {
         if (!currentScript) return
-        const index = response.Data.findIndex((ele) => ele.OnlineId === currentScript.OnlineId)
-        if (index !== -1) {
-            response.Data[index] = currentScript
+        let index = -1
+        if ((currentScript.OnlineId as number) > 0) {
+            index = response.Data.findIndex((ele) => ele.OnlineId === currentScript.OnlineId)
+        } else {
+            index = response.Data.findIndex((ele) => ele.Id === currentScript.Id)
         }
+        if (index === -1) return
+        response.Data[index] = {...currentScript}
         setResponse({
             ...response,
             Data: [...response.Data]
@@ -713,8 +719,9 @@ interface PluginListLocalProps {
     maxWidth: number
 }
 export const PluginListLocalItem: React.FC<PluginListLocalProps> = (props) => {
+    const {plugin} = props
     const {userInfo, maxWidth, onClicked} = props
-    const [plugin, setPlugin] = useState(props.plugin)
+    // const [plugin, setPlugin] = useState(props.plugin)
     const [uploadLoading, setUploadLoading] = useState(false)
     const uploadOnline = (oldItem: YakScript) => {
         if (!userInfo.isLogin) {
@@ -770,12 +777,11 @@ export const PluginListLocalItem: React.FC<PluginListLocalProps> = (props) => {
                                     .then((newSrcipt: YakScript) => {
                                         if (item.Id === plugin.Id) {
                                             onClicked(newSrcipt)
-                                            setPlugin(newSrcipt)
+                                            // setPlugin(newSrcipt)
                                         }
                                         ipcRenderer
                                             .invoke("delete-yak-script", item.Id)
-                                            .then(() => {
-                                            })
+                                            .then(() => {})
                                             .catch((err) => {
                                                 failed("删除本地失败:" + err)
                                             })
@@ -809,6 +815,7 @@ export const PluginListLocalItem: React.FC<PluginListLocalProps> = (props) => {
     if (props.onYakScriptRender) {
         return props.onYakScriptRender(plugin, maxWidth)
     }
+
     return (
         <Card
             size={"small"}
