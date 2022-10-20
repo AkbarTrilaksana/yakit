@@ -24,7 +24,7 @@
     "ahooks": "^3.1.6",
     "ali-react-table": "2.6.1",
     "antd": "4.17.2",
-    "bizcharts": "^4.1.12",
+    "bizcharts": "^4.1.21",
     "codemirror": "^5.63.3",
     "cross-env": "7.0.3",
     "customize-cra": "^1.0.0",

@@ -3678,10 +3678,10 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-bizcharts@^4.1.12:
-  version "4.1.19"
-  resolved "https://registry.yarnpkg.com/bizcharts/-/bizcharts-4.1.19.tgz#2703b1a3d99864dbed488d629eb66d3cab36f9ba"
-  integrity sha512-ML4SpDLrDQbDnIAxmiU+t8Fll78JxAr39Q+I8DMTKHi5IRU2uevZT+h9M4SGpOQVKaXnmLypmqzEcK79yQNrQQ==
+bizcharts@^4.1.21:
+  version "4.1.21"
+  resolved "https://registry.yarnpkg.com/bizcharts/-/bizcharts-4.1.21.tgz#a5afa638100a38452ce31ea8284867152b702d05"
+  integrity sha512-qQjvI8cH7Td+ZVNCF60egsEihpT40Y313GtLHSMODamsnbD9wrAk+EMEdkOGp9qcasocJKRH5rzNYLD7BJi1wA==
   dependencies:
     "@antv/component" "*"
     "@antv/g2" "4.1.32"
@@ -3691,10 +3691,9 @@ bizcharts@^4.1.12:
     "@babel/plugin-transform-runtime" "^7.12.10"
     "@juggle/resize-observer" "^3.3.1"
     babel-plugin-transform-replace-object-assign "^2.0.0"
-    d3-color "^1.4.1"
+    d3-color "^3.1.0"
     react-error-boundary "3.0.2"
     react-reconciler "^0.25.1"
-    simple-statistics "^7.1.0"
     warning "^4.0.3"
 
 bluebird@^3.5.5:
@@ -5215,10 +5214,15 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==
 
-d3-color@1, d3-color@^1.4.1:
+d3-color@1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.4.1.tgz#c52002bf8846ada4424d55d97982fef26eb3bc8a"
   integrity sha512-p2sTHSLCJI2QKunbGb7ocOh7DgTAn8IrLx21QRc/BSnodXM4sv6aLQlnfpvehFMLZEfBc6g9pH9SWQccFYfJ9Q==
+
+d3-color@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-3.1.0.tgz#395b2833dfac71507f12ac2f7af23bf819de24e2"
+  integrity sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==
 
 d3-ease@^1.0.5:
   version "1.0.7"
@@ -9477,7 +9481,7 @@ lodash.upperfirst@^4.3.1:
   resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
   integrity sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.16.5, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.7.0:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.0.1, lodash@^4.16.5, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.7.0, lodash@~4.17.10:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -14229,11 +14233,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-simple-statistics@^7.1.0:
-  version "7.7.5"
-  resolved "https://registry.yarnpkg.com/simple-statistics/-/simple-statistics-7.7.5.tgz#b34ad7dc18f4dea7bce2cbd376c467147062e839"
-  integrity sha512-CYq683Yg2mb7M4mklQ6FtxEdsYeziGa2giaLvqXobfK1qVqZDKd7BIqLnngnKQSw9GsfNinbiScbfjc3IRWdQA==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
