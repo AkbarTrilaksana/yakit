@@ -20,7 +20,7 @@
     "@types/react-highlight-words": "^0.16.3",
     "@types/react-resizable": "^1.7.4",
     "@types/react-sparklines": "^1.7.2",
-    "@uiw/react-md-editor": "^3.6.5",
+    "@uiw/react-md-editor": "^3.11.0",
     "ahooks": "^3.1.6",
     "ali-react-table": "2.6.1",
     "antd": "4.17.2",
